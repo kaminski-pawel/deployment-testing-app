@@ -1,0 +1,28 @@
+{
+  "editor.insertSpaces": true,
+  "editor.minimap.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {},
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[json]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length=90"],
+  "isort.args": ["--profile", "black", "--line-length", "90"]
+}
