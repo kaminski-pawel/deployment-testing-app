@@ -5,7 +5,7 @@ from django.test import TestCase
 User = get_user_model()
 
 
-class PublicUserApiTests(TestCase):
+class CreateUserTests(TestCase):
     def test_for_error_if_no_email_nor_password(self):
         with self.assertRaises(TypeError):
             User.objects.create_user()
@@ -41,3 +41,8 @@ class PublicUserApiTests(TestCase):
     def test_email_normalization(self):
         user = User.objects.create_user(email="test@EXamplE.com", password="bar")
         self.assertEqual(user.email, "test@example.com")
+
+    def test_create_superuser(self):
+        user = User.objects.create_superuser(email="test@example.com", password="bar")
+        self.assertTrue(user.is_staff)
+        self.assertTrue(user.is_superuser)
