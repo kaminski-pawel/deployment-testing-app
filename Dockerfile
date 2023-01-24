@@ -15,8 +15,8 @@ RUN python -m venv /py && \
     apk add --update --no-cache --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev && \
     if [ $DEV = "true" ]; \
-        then /py/bin/pip install -r /tmp/requirements/dev.txt; \
-        else /py/bin/pip install -r /tmp/requirements/prod.txt; \
+        then /py/bin/pip install -r /tmp/requirements/dev.txt --use-pep517; \
+        else /py/bin/pip install -r /tmp/requirements/prod.txt --use-pep517; \
     fi && \
     rm -rf /tmp && \
     apk del .tmp-build-deps && \
